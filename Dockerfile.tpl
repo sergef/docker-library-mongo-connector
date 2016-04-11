@@ -14,6 +14,7 @@ RUN apk update \
 RUN pip install mongo-connector
 
 CMD mongo-connector \
+  --auto-commit-interval=0 \
   -m localhost:27017 \
   -t http://localhost:8983/solr/$SOLR_CORE_NAME \
   -d solr_doc_manager \
